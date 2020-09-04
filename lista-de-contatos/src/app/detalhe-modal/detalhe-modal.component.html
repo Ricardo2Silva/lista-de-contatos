@@ -1,0 +1,21 @@
+<mat-dialog-content class="mat-typography">
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Nome</td>
+                <td>Tipo</td>
+                <td>Valor</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{nome}}</td>
+                <td>{{tipo}}</td>
+                <td>{{valor}}</td>
+            </tr>
+        </tbody>
+    </table>            
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial class="mt-3">Fechar</button>
+</mat-dialog-actions>

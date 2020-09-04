@@ -1,0 +1,32 @@
+<div class="container container-fluid mt-5">
+  <contato-filtro (filtroValores)="onContatoHandler($event)" (filtroValoresTipo)="onContatoTipoHandler($event)"></contato-filtro>
+  <mat-card class="mt-5">
+    <mat-card-title>
+      <h1 class="text-center">Lista de Contatos</h1>
+     </mat-card-title>
+      <table class="table container-fluid">
+        <thead>
+          <tr>
+            <th>Nome do contato</th>
+            <th>Tipo de contato</th>
+            <th>Valor</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of contatos">
+            <td>{{ c.nome }}</td>
+            <td>{{ c.tipo === 'email'? 'e-mail': c.tipo }}</td>
+            <td>{{ c.valor | telefone }}</td>
+            <td>
+              <div class="row">
+                <button class="btn btn-primary ml-1"(click)="atualizarContato(c)">Alterar</button>
+                <button class="btn btn-success ml-1"(click)="openDialog(c)">Detalhe</button>
+                <button class="btn btn-danger ml-1"(click)="deletarContato(c.id)">Deletar</button>
+              </div>
+            </td> 
+          </tr>
+        </tbody>
+      </table>
+    </mat-card>
+</div>
